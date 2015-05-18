@@ -1,0 +1,64 @@
+# Site settings
+title: MOcean
+email: info@mocean.ru
+description: ""
+baseurl: ""
+url: "http://mocean.ru"
+mainpage: /
+
+gems: [mini_magick]
+
+carousel_delay: 10000
+magnify_in_catalog: false
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+image:
+    source: _photos
+    output: generated
+    presets:
+        thumb-small:
+            height: 100
+            width: AUTO
+            quality: 50
+            attr:
+                class: thumb img-responsive
+        thumb-medium:
+            height: 400
+            width: 300
+            quality: 80
+            attr:
+                class: img-responsive
+        thumb-big:
+            height: 450
+            width: 350
+            quality: 80
+            attr:
+                class: img-responsive
+
+        background-xl:
+            width: 1600
+            screen-min-width: 1200
+            quality: 50
+        background-lg:
+            width: 1200
+            screen-min-width: 992
+            quality: 50
+        background-md:
+            width: 992
+            screen-min-width: 768
+            quality: 50
+        background-sm:
+            width: 768
+            screen-min-width: 480
+            quality: 50
+        background-xs:
+            width: 480
+            screen-min-width: 320
+            quality: 50
+        background-null:
+            width: 320
+            screen-min-width: 1
+            quality: 50

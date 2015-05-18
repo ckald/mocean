@@ -1,0 +1,39 @@
+---
+layout: page
+---
+<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+</a>
+<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+</a>
+
+<div class="description">
+    <h1 class="hidden">{{ page.title }}</h1>
+
+    <div class="row">
+        <div class="content col-md-6 col-xs-12">
+            {{ content }}
+        </div>
+
+        <div id="thumbcarousel" class="hidden-xs col-md-6">
+            <div class="wrapper">
+            {% for photo in page.photos %}
+                <a class="thumb-source" href="{{ site.baseurl }}/photos/{{ photo.file }}">
+                    {% capture srcset %}{% strip-space %}
+                        {% for preset in site.image.presets %}
+                            {% if preset[1].screen-min-width %}
+                                {{ site.baseurl }}
+                                {% image url {{ preset[0] }} {{ photo.file }} %}
+                                {{ preset[1].screen-min-width }}w
+                                {% unless forloop.last %},{% endunless %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endstrip-space %}{% endcapture %}
+                    {% image thumb-small lazy {{ photo.file }} data-srcset="{{ srcset }}" data-source="{{ site.baseurl }}/photos/{{ photo.file }}" data-target="#carousel" data-slide-to="{{ forloop.index|minus:1 }}" %}
+                </a>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

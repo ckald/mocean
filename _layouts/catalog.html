@@ -1,0 +1,19 @@
+---
+layout: page
+---
+<div class="catalog row">
+{% for dress in site.catalog %}
+    <div class="item">  <!--  col-lg-3 col-md-4 col-sm-6 col-xs-12 -->
+        <a class="tile" href="{{ site.baseurl }}{{ dress.url }}">
+            {% if dress.photos %}
+                {% image thumb-medium {{ dress.photos[0].file }} class="hidden-xs" %}
+                {% image thumb-big {{ dress.photos[0].file }} class="visible-xs" %}
+            {% endif %}
+            <div class="description">
+                {{ dress.title }}
+            </div>
+        </a>
+    </div>
+{% endfor %}
+</div>
+{{ content }}

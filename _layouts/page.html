@@ -1,0 +1,9 @@
+{% include head.html %}
+<body class="{% unless page.scheme %}light{% endunless %}{{ page.scheme }}">
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include scripts.html %}
+</body>
+</html>

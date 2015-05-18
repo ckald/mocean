@@ -1,0 +1,12 @@
+baseurl: ""
+url: "http://mocean.ru"
+destination: _publish
+mainpage: /
+
+menus:
+    main:
+    - Каталог: /index.html
+
+image:
+    source: _photos
+    output: generated

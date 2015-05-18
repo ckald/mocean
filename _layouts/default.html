@@ -1,0 +1,45 @@
+---
+layout: page
+---
+<div class="row">
+    <div id="photos" class="col-md-6">
+        <h1 class="visible-sm">{{ page.title }}</h1>
+        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="{{ site.carousel_delay }}">
+            <div class="carousel-inner">
+                {% for photo in page.photos %}
+                <div class="item" data-slide-number="{{ forloop.index|minus:1 }}">
+                    {% image thumb-big {{ photo.file }} data-height="{{ photo.height }}" data-toggle="magnify" data-magnify-source="{{ site.baseurl }}/photos/{{ photo.file }}" %}
+                </div>
+                {% endfor %}
+            </div>
+            <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+    <div class="description col-md-6">
+        {% comment %}<div class="breadcrumbs">
+            {% catalog_breadcrumbs %}
+        </div>{% endcomment %}
+
+        <h1 class="hidden-sm">{{ page.title }}</h1>
+
+        {{ content }}
+
+        <div id="thumbcarousel">
+        {% for photo in page.photos %}
+            {% image thumb-small {{ photo.file }} data-target="#carousel" data-slide-to="{{ forloop.index|minus:1 }}" %}
+        {% endfor %}
+        </div>
+
+        {% comment %}<h4>Разделы:</h4>
+        <ul>
+        {% for tag in page.tags %}
+            <li><a href="#{{ tag }}">{{ tag }}</a></li>
+        {% endfor %}
+        </ul>{% endcomment %}
+    </div>
+</div>

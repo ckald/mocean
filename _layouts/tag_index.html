@@ -1,0 +1,27 @@
+---
+layout: page
+scheme: index
+---
+{% unless page.tag %}{% assign no_tag=true %}{% endunless %}
+
+<div class="wrapper">
+  <div class="catalog row">
+  {% for post in site.pages %}
+    {% if no_tag or post.tags contains page.tag %}
+      {% if post.tags %}
+      <div class="item "> <!-- col-lg-3 col-md-4 col-sm-6 col-xs-12 -->
+        <a class="tile" title="{{ post.title }}" href="{{ site.baseurl }}{{ post.url }}">
+          {% if post.cover %}
+            {% image thumb-medium lazy {{ post.cover.file }} {{ magnifier }} class="hidden-xs img-responsive" alt="{{ post.title }}" %}
+            {% image thumb-big lazy {{ post.cover.file }} class="visible-xs img-responsive" alt="{{ post.title }}" %}
+          {% endif %}
+          <div class="description hidden">
+            {{ post.title }}
+          </div>
+        </a>
+      </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,19 @@
+name: Каталог
+url: catalog
+# subs:
+#   - name: Платья
+#     url: dresses
+#     subs:
+#       - name: Длинные
+#         url: long
+#       - name: Короткие
+#         url: short
+
+#   - name: Шарфы
+#     url: scarfs
+
+#   - name: Сарафаны
+#     url: sarafans
+
+#   - name: Разные штуки
+#     url: other
