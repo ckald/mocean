@@ -154,7 +154,11 @@ a {
     margin: 3px auto;
 }
     .logo img {
-        height: 80px;
+        height: 50px;
+        margin-top: 20px;
+    }
+    .logo .index-logo {
+        height: 83px;
     }
 
 .contacts {
@@ -176,7 +180,7 @@ a {
     background: rgba(238, 238, 238, 0.75);
     display: block;
 
-    padding: 3px;
+    /*padding: 3px;*/
     font-size: 15px;
 
     transition: .2s ease-in-out all;
@@ -186,7 +190,7 @@ a {
     position: relative;
     overflow: hidden;
 
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
 
     min-height: 300px;
     min-width: 300px;
@@ -205,15 +209,16 @@ a {
 
 }
 .catalog {
-    padding: 20px 0;
+    padding: 40px 0;
     margin: 0 auto;
     max-width: 1000px;
     text-align: center;
 }
 .item {
     display: inline-block;
-    margin: 3px;
+    margin: 10px;
     position: relative;
+    background-color: #fff;
 }
 
 .carousel-control {
@@ -257,8 +262,29 @@ a {
         }
 
 
-.tile .description, .description h1, .contacts {
+.tile .description {
+    color: #000;
+    background: rgba(255, 255, 255, 0.75);
+    text-shadow: none;
+    padding: 5px;
+}
+.price {
+    display: inline-block;
+    background: #FF9800;
+    border-radius: 3px;
+    color: #fff;
+    /*float:right;*/
+    padding: 2px 4px;
+    margin: -2px 3px;
+}
+
+h1 .price {
+    font-size: 0.8em;
+}
+
+.contacts {
     padding: 20px;
+    text-shadow: none;
 }
 
 .description {
@@ -268,6 +294,8 @@ a {
     right: 0;
 
     padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
 
     background: rgba(0,0,0,0);
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 32%, rgba(0,0,0,0.8) 100%);
@@ -331,7 +359,8 @@ a {
   }
 
   .logo img {
-    height: 74px;
+    height: 50px;
+    margin-top: 20px;
   }
   .contacts {
     display: inline-block;
@@ -347,11 +376,11 @@ a {
         font-size: 2.5em;
     }
     .logo img {
-        height: 100px;
+        height: 50px;
     }
     .contacts {
         height: 60px;
-        margin: 23px !important;
+        margin: 10px !important;
     }
 }
 

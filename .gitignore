@@ -3,3 +3,4 @@ _publish
 *.zip
 *.sublime-*
 *.jekyll-metadata
+login.cfg

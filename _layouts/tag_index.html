@@ -15,9 +15,11 @@ scheme: index
             {% image thumb-medium lazy {{ post.cover.file }} {{ magnifier }} class="hidden-xs img-responsive" alt="{{ post.title }}" %}
             {% image thumb-big lazy {{ post.cover.file }} class="visible-xs img-responsive" alt="{{ post.title }}" %}
           {% endif %}
-          <div class="description hidden">
-            {{ post.title }}
+          {% if post.price or post.title %}
+          <div class="description">
+            {{ post.title }} {% if post.price %}<span class="price">{{ post.price }}</span>{% endif %}
           </div>
+          {% endif %}
         </a>
       </div>
       {% endif %}

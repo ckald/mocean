@@ -1,5 +1,6 @@
 ---
 layout: page
+scheme: index
 ---
 <div class="catalog row">
 {% for dress in site.catalog %}
@@ -9,6 +10,7 @@ layout: page
                 {% image thumb-medium {{ dress.photos[0].file }} class="hidden-xs" %}
                 {% image thumb-big {{ dress.photos[0].file }} class="visible-xs" %}
             {% endif %}
+             {{ dress.price }}
             <div class="description">
                 {{ dress.title }}
             </div>

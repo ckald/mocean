@@ -1,7 +1,6 @@
 {% include head.html %}
-<body class="{% unless page.scheme %}light{% endunless %}{{ page.scheme }}">
+<body class="{% unless page.scheme %}light{% endunless %}{{ page.scheme }} {{ layout.scheme }}">
     {% include header.html %}
-
     {{ content }}
 
     {% include scripts.html %}
